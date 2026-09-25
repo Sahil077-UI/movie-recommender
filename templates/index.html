@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Movie Recommender</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div class="badge">
+                Movie Recommender
+            </div>
+
+            <h1>
+                Find Your Next
+                <span>Favorite Movie</span>
+            </h1>
+
+            <p>
+                Enter a movie you love and discover movies
+                that match its genre and story.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="movieInput"
+                    placeholder="Enter a movie title..."
+                    autocomplete="off"
+                >
+
+                <button id="recommendBtn">
+                    Recommend
+                </button>
+
+            </div>
+
+            <p
+                id="errorMessage"
+                class="error"
+            ></p>
+
+        </section>
+
+
+        <section
+            id="resultsSection"
+            class="results-section hidden"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="small-title">
+                        Recommendations
+                    </p>
+
+                    <h2 id="resultTitle">
+                        Movies you may like
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="movieGrid"
+                class="movie-grid"
+            ></div>
+
+        </section>
+
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            Finding movies...
+        </div>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>
